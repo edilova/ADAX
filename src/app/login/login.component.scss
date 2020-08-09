@@ -1,0 +1,45 @@
+.login {
+  height: 70vh;
+  .tab-button {
+    border: none;
+    height: 3.5rem;
+    background-color: transparent;
+    border-bottom: 3px solid #E0E2F0;
+    font-size: 1.25rem;
+    line-height: 24px;
+    color: #A1A4BD;
+  }
+  button:active {
+    color: #000000;
+    border: none;
+    border-bottom: 3px solid #3E53FF;
+  }
+  ::placeholder {
+    color: #A1A4BD;
+  }
+  .form {
+    input {
+      height: 3.5rem;
+      border: 1px solid #D0D1DE;
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
+  }
+  .forget-password {
+    font-size: .875rem;
+    line-height: 140%;
+    color: #3E53FF;
+  }
+  .submit {
+    width: 9rem;
+    height: 3.5rem;
+    background: #3E53FF;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    border: none;
+    color: #fff;
+  }
+}
