@@ -1,0 +1,55 @@
+<div class="my-news">
+  <div *ngIf="!ads">
+    <p class="title">У вас пока нет объявлении</p>
+    <button class="create-ad mt-3">Подать объявление
+      <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.57733 0.91107C0.902767 0.585633 1.4304 0.585633 1.75584 0.91107L6.99992 6.15515L12.244 0.91107C12.5694 0.585633 13.0971 0.585633 13.4225 0.91107C13.7479 1.23651 13.7479 1.76414 13.4225 2.08958L7.58917 7.92291C7.26374 8.24835 6.7361 8.24835 6.41066 7.92291L0.57733 2.08958C0.251893 1.76414 0.251893 1.23651 0.57733 0.91107Z" fill="white"/>
+      </svg>
+    </button>
+    <div class="d-flex justify-content-center w-100">
+      <img src="../../../assets/no-ads.svg" alt="">
+    </div>
+  </div>
+  <div class="content" *ngIf="ads">
+    <div class="if-exist">
+      <p class="title mb-5">Ваши объявления</p>
+      <div class="content-border">
+        <div class="d-flex flex-row mb-5" *ngFor="let item of ads">
+          <div class="col-md-3 pl-0">
+            <img class="w-100" src="../../../assets/my-ads.svg" alt="" width="177">
+          </div>
+          <div class="col-md-6">
+            <div class="w-100 h-100 d-flex flex-column justify-content-between">
+              <p class="price m-0">{{item.price}}</p>
+              <p class="status m-0">{{item.status}}</p>
+              <p class="description mb-3">{{item.description}}</p>
+              <div class="d-flex justify-content-between">
+                <p class="description m-0">Выручка</p>
+                <p class="description m-0">{{item.revenue}}</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p class="description m-0">Расходы</p>
+                <p class="description m-0">{{item.expenses}}</p>
+              </div>
+              <div class="d-flex justify-content-between mt-3">
+                <p class="views m-0">{{item.views}} просмотра</p>
+                <p class="views m-0">{{item.time}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="d-flex w-100 justify-content-end align-items-end mb-4">
+              <img class="mr-2" src="../../../assets/edit.svg" alt="">
+              <p class="edit m-0">Редактировать</p>
+            </div>
+            <div class="d-flex w-100 justify-content-end align-items-end">
+              <img class="mr-2" src="../../../assets/trash.svg" alt="">
+              <p class="delete m-0">Удалить</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

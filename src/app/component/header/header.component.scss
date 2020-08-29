@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .header {
+  margin-left: 4rem;
+  margin-right: 4rem;
   height: 15vh;
   padding-top: 1rem;
   font-family: 'Montserrat', sans-serif;
+  .navbar {
+    padding: .5rem 0rem;
+  }
   .navbar-brand {
     color: #3E53FF;
     font-style: normal;

@@ -1,0 +1,33 @@
+<div class="personal-account d-flex row">
+  <div class="col-md-3 col-sm-12">
+    <img class="rounded-circle mb-3" src="../../assets/user_image.svg" alt="">
+    <p class="name mb-1">Имя фамилия</p>
+    <p class="contacts mb-1">+7 777 777 77 77</p>
+    <p class="contacts mb-3">name.surname@gmail.com</p>
+    <div class="d-flex mb-2">
+      <img class="mr-3" src="../../assets/my_ads.svg" alt="">
+      <a class="tabs" routerLink="./my-news" routerLinkActive="active">Мои объявления</a>
+    </div>
+    <div class="d-flex mb-2">
+      <img class="mr-3" src="../../assets/chat.svg" alt="">
+      <a class="tabs" routerLink="./chat" routerLinkActive="active">Сообщения</a>
+    </div>
+    <div class="d-flex mb-2">
+      <img class="mr-3" src="../../assets/alert.svg" alt="">
+      <a class="tabs" routerLink="./alert" routerLinkActive="active">Уведомления</a>
+    </div>
+    <div class="d-flex mb-2">
+      <img class="mr-3" src="../../assets/settings.svg" alt="">
+      <a class="tabs" routerLink="./settings" routerLinkActive="active">Настройки</a>
+    </div>
+    <div class="d-flex mb-2">
+      <img class="mr-3" src="../../assets/exit.svg" alt="">
+      <a class="tabs" routerLink="/login" routerLinkActive="active">Выйти</a>
+    </div>
+  </div>
+  <div class="content col-md-9 col-sm-12">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 .login {
+  margin-left: 4rem;
+  margin-right: 4rem;
   height: 70vh;
   .tab-button {
     border: none;
@@ -8,8 +10,9 @@
     font-size: 1.25rem;
     line-height: 24px;
     color: #A1A4BD;
+    outline: none;
   }
-  button:active {
+  .active {
     color: #000000;
     border: none;
     border-bottom: 3px solid #3E53FF;
@@ -31,7 +34,8 @@
     color: #3E53FF;
   }
   .submit {
-    width: 9rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
     height: 3.5rem;
     background: #3E53FF;
     border-radius: 50px;

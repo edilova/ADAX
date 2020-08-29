@@ -1,1 +1,136 @@
-<p>product works!</p>
+<div class="product row">
+  <p class="path">Категория бизнеса • Категория 1</p>
+  <div class="row">
+    <div class="col-8">
+      <img src="../../assets/product_main.svg" alt="" width="100%">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner d-flex">
+          <div class="carousel-item active">
+            <div class="inner d-flex h-100 justify-content-between align-content-center">
+              <img src="../../assets/product_1.svg" alt="" width="19%">
+              <img src="../../assets/product_2.svg" alt="" width="19%">
+              <img src="../../assets/product_3.svg" alt="" width="19%">
+              <img src="../../assets/product_4.svg" alt="" width="19%">
+              <img src="../../assets/product_5.svg" alt="" width="19%">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="inner d-flex h-100 justify-content-between">
+              <img src="../../assets/product_1.svg" alt="">
+              <img src="../../assets/product_2.svg" alt="">
+              <img src="../../assets/product_3.svg" alt="">
+              <img src="../../assets/product_4.svg" alt="">
+              <img src="../../assets/product_5.svg" alt="">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="inner d-flex h-100 justify-content-between">
+              <img src="../../assets/product_1.svg" alt="">
+              <img src="../../assets/product_2.svg" alt="">
+              <img src="../../assets/product_3.svg" alt="">
+              <img src="../../assets/product_4.svg" alt="">
+              <img src="../../assets/product_5.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h3 class="subtitle mt-5 mb-4">Информация</h3>
+      <div class="d-flex row w-100">
+        <div class="col-md-6 col-sm-12">
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Выручка</p>
+            <p class="info-value">{{infos.revenue}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Расходы</p>
+            <p class="info-value">{{infos.expenses}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Заемные средства</p>
+            <p class="info-value">{{infos.borrowed_funds}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Товарный остаток</p>
+            <p class="info-value">{{infos.stock_balance}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Статус помещения:</p>
+            <p class="info-value">{{infos.room_status}}</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Доля</p>
+            <p class="info-value">{{infos.share}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Персонал</p>
+            <p class="info-value">{{infos.staff}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="info-key">На рынке</p>
+            <p class="info-value">{{infos.market}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="info-key">Окупаемость</p>
+            <p class="info-value">{{infos.payback}}</p>
+          </div>
+        </div>
+      </div>
+      <h3 class="subtitle mt-5 mb-4">Описание</h3>
+      <p class="description">Как покупатель, мне нужно иметь возможность быстро отсортировать интересующие меня бизнесы,
+        для того чтобы ускорить процесс работы с платформой3. Как покупатель, мне нужно иметь возможность
+        быстро отсортировать интересующие меня бизнесы, для того чтобы ускорить процесс работы с платформой3.
+        Как покупатель, мне нужно иметь возможность быстро отсортировать интересующие меня бизнесы, для
+        того чтобы ускорить процесс работы с платформой</p>
+      <h3 class="subtitle mt-5 mb-4">Прикрепленные документы</h3>
+      <div class="attached-files d-flex align-items-center p-3">
+        <p class="file-name m-0">{{infos.file_name}}</p>
+        <p class="m-0">pdf</p>
+      </div>
+      <h3 class="subtitle mt-5 mb-4">Контактное лицо</h3>
+      <div class="d-flex flex-row my-3">
+        <img class="rounded-circle mr-3" src="../../assets/user_image.svg" alt="" width="70" height="70">
+        <div class="d-flex flex-column justify-content-center">
+          <p class="name mb-1">Иван Иванов</p>
+          <p class="status m-0">Владелец</p>
+        </div>
+      </div>
+      <div class="w-75 d-flex flex-column align-items-end mb-5">
+        <textarea class="message-ares w-100" type="text" placeholder="Напишите ваше первое сообщение Ивану"></textarea>
+        <button class="message-btn my-3">Отправить</button>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="right-block">
+        <p class="price">120 000 000 тг.</p>
+        <p class="title">Производственный комплекс, завод очень прибыльный</p>
+        <p class="address">г. Нур-Султан, Пропспект Кабанбай батыра</p>
+        <div class="divider"></div>
+        <div class="d-flex flex-row my-3">
+          <img class="rounded-circle mr-3" src="../../assets/user_image.svg" alt="" width="70" height="70">
+          <div class="d-flex flex-column justify-content-center">
+            <p class="name mb-1">Иван Иванов</p>
+            <p class="status m-0">Владелец</p>
+          </div>
+        </div>
+        <button class="send-message-1">Написать сообщение</button>
+        <button class="send-message-2 mt-2">Написать сообщение</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <app-similar-ads></app-similar-ads>

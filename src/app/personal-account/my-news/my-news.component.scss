@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.my-news {
+  font-family: 'Montserrat', sans-serif;
+  height: 30rem;
+  .title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.625rem;
+    line-height: 21px;
+    color: #000000;
+  }
+  .create-ad {
+    border: none;
+    color: #ffffff;
+    width: 14rem;
+    height: 3rem;
+    background: #3E53FF;
+    border-radius: 50px;
+  }
+  .content {
+    height: 30rem;
+    overflow-y: scroll;
+  }
+  .if-exist {
+    padding: 3.5rem;
+    border: 1px solid #A1A4BD;
+    box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.08);
+    border-radius: 10px 10px 10px 10px;
+    .title {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 26px;
+      line-height: 21px;
+      color: #000000;
+    }
+    .price {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #000000;
+    }
+    .status {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #009117;
+    }
+    .description {
+      font-style: normal;
+      font-weight: normal;
+      font-size: .875rem;
+      color: #000000;
+    }
+    .views {
+      font-style: normal;
+      font-weight: normal;
+      font-size: .875rem;
+      color: #A1A4BD;
+    }
+  }
+  .edit {
+    line-height: .9rem;
+    text-align: right;
+    color: #3E53FF;
+  }
+  .delete {
+    line-height: 0.9rem;
+    text-align: right;
+    color: #FF5852;
+
+  }
+}

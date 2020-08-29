@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  activeTab(tab) {
+  activeTab(tab): void {
     this.tabName = tab;
   }
 }
