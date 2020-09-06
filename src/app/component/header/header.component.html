@@ -11,8 +11,19 @@
       <div class="d-flex">
         <img src="../../../assets/person.svg" alt="person">
         <a class="account my-auto ml-2 mr-4" routerLink="/personal-account/my-news">Личный кабинет</a>
-        <button class="create-ad">Подать объявление</button>
+        <button class="create-ad" (click)="createAd()">Подать объявление
+          <svg class="ml-3" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.577085 0.91107C0.902522 0.585633 1.43016 0.585633 1.7556 0.91107L6.99967 6.15515L12.2438 0.91107C12.5692 0.585633 13.0968 0.585633 13.4223 0.91107C13.7477 1.23651 13.7477 1.76414 13.4223 2.08958L7.58893 7.92291C7.26349 8.24835 6.73586 8.24835 6.41042 7.92291L0.577085 2.08958C0.251649 1.76414 0.251649 1.23651 0.577085 0.91107Z" fill="white"/>
+          </svg>
+        </button>
       </div>
+    </div>
+    <div class="arrow-container" *ngIf="createAdBtn">
+      <div class="arrow arrow-bottom"></div>
+    </div>
+    <div class="city-options px-4" *ngIf="createAdBtn">
+      <p class="my-3" (click)="setAdType('Продажа бизнеса')">Продажа бизнеса</p>
+      <p class="mb-3" (click)="setAdType('Продажа франшизы')">Продажа франшизы</p>
     </div>
   </nav>
 </div>

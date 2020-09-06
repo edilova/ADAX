@@ -10,11 +10,13 @@ import {AlertComponent} from './personal-account/alert/alert.component';
 import {SettingOrProject} from '@angular/cli/commands/analytics';
 import {SettingsComponent} from './personal-account/settings/settings.component';
 import {MyNewsComponent} from './personal-account/my-news/my-news.component';
+import {CreateBusinessComponent} from './create-business/create-business.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'main', pathMatch: 'full'},
+  { path: '', redirectTo: 'main', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'main', component: MainComponent},
+  { path: 'create-business', component: CreateBusinessComponent},
   { path: 'product/:id', component: ProductComponent},
   {
     path: 'personal-account',

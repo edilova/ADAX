@@ -16,6 +16,9 @@ import { AlertComponent } from './personal-account/alert/alert.component';
 import { SettingsComponent } from './personal-account/settings/settings.component';
 import { MyNewsComponent } from './personal-account/my-news/my-news.component';
 import { FiltersComponent } from './component/filters/filters.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CreateBusinessComponent } from './create-business/create-business.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +35,15 @@ import { FiltersComponent } from './component/filters/filters.component';
     AlertComponent,
     SettingsComponent,
     MyNewsComponent,
-    FiltersComponent
+    FiltersComponent,
+    CreateBusinessComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

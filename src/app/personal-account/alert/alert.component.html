@@ -1,1 +1,14 @@
-<p>alert works!</p>
+<div class="alert-content">
+  <div class="block d-flex justify-content-between align-items-center" *ngFor="let item of data.results">
+    <div>
+      <p class="title">{{item.text}}</p>
+      <p class="subtitle">{{item.business.name}}</p>
+    </div>
+    <div class="d-flex flex-column align-items-end">
+      <svg class="mb-3" width="19" height="4" viewBox="0 0 19 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.5 0C10.558 0 11.4167 0.896 11.4167 2C11.4167 3.104 10.558 4 9.5 4C8.442 4 7.58333 3.104 7.58333 2C7.58333 0.896 8.442 0 9.5 0ZM2.79167 0C3.84967 0 4.70833 0.896 4.70833 2C4.70833 3.104 3.84967 4 2.79167 4C1.73367 4 0.875 3.104 0.875 2C0.875 0.896 1.73367 0 2.79167 0ZM16.2083 0C17.2663 0 18.125 0.896 18.125 2C18.125 3.104 17.2663 4 16.2083 4C15.1503 4 14.2917 3.104 14.2917 2C14.2917 0.896 15.1503 0 16.2083 0Z" fill="black"/>
+      </svg>
+      <p class="time">сегодня в 19:39</p>
+    </div>
+  </div>
+</div>

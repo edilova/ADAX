@@ -41,7 +41,7 @@
     opacity: 1; /* Firefox */
   }
   .create-ad {
-    width: 14rem;
+    width: 16rem;
     height: 3rem;
     color: #fff;
     background: #3E53FF;
@@ -51,5 +51,60 @@
   .account {
     color: #000000;
     font-size: 1rem;
+  }
+  .city-options {
+    width: 16rem;
+    position: absolute;
+    margin-top: 55px;
+    text-align: left;
+    border: 1px solid #D7DAF1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #ffffff;
+    z-index: 15;
+    top: 15px;
+    right: 0;
+  }
+  .arrow{
+    width: 0;
+    height: 0;
+    border-radius: 15px;
+    display: inline-block;
+    position: absolute;
+    z-index: 20;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 43px;
+    left: 120px;
+  }
+
+  .arrow:after{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  .arrow-bottom{
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #D7DAF1;
+  }
+  .arrow-bottom:after{
+    top: 1px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid #fff;
+    left: -25px;
+  }
+  .arrow-container{
+    position: absolute;
+    right: 310px;
+    //float: left;
+    //margin-left: 25px;
+    height: 20px;
+    width: 15px;
   }
 }

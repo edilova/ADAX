@@ -1,0 +1,135 @@
+<div class="filters d-flex">
+  <div>
+    <div class="city d-flex flex-row justify-content-between align-items-center px-4" (click)="openCity()">
+      <p class="m-0">{{city}}</p>
+      <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+      </svg>
+    </div>
+    <div class="arrow-container" *ngIf="isCity">
+      <div class="arrow arrow-bottom"></div>
+    </div>
+    <div class="city-options px-4" *ngIf="isCity">
+      <p class="my-3" (click)="setCity('Нур-Султан')">Нур-Султан</p>
+      <p class="mb-3" (click)="setCity('Алматы')">Алматы</p>
+      <p (click)="setCity('Караганда')">Караганда</p>
+    </div>
+  </div>
+  <div>
+    <div class="type d-flex flex-row justify-content-between align-items-center px-4" (click)="openType()">
+      <p class="m-0">{{type}}</p>
+      <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+      </svg>
+    </div>
+    <div class="arrow-container" *ngIf="isType">
+      <div class="arrow arrow-bottom"></div>
+    </div>
+    <div class="type-options px-4" *ngIf="isType">
+      <p class="my-3" (click)="setType('Продажа бизнеса')">Продажа бизнеса</p>
+      <p (click)="setType('Продажа франшизы')">Продажа франшизы</p>
+    </div>
+  </div>
+  <div>
+    <div class="category d-flex flex-row justify-content-between align-items-center px-4" (click)="openCategory()">
+      <p class="m-0">{{category}}</p>
+      <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+      </svg>
+    </div>
+    <div class="arrow-container" *ngIf="isCategory">
+      <div class="arrow arrow-bottom"></div>
+    </div>
+    <div class="category-options d-flex flex-row px-4" *ngIf="isCategory">
+      <div class="col-6">
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox1" />
+          <label for="checkbox1"></label>
+          <p class="cat-type m-0">Категория 1</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox2" />
+          <label for="checkbox2"></label>
+          <p class="cat-type m-0">Категория 2</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox3" />
+          <label for="checkbox3"></label>
+          <p class="cat-type m-0">Категория 3</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox4" />
+          <label for="checkbox4"></label>
+          <p class="cat-type m-0">Категория 4</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox5" />
+          <label for="checkbox5"></label>
+          <p class="cat-type m-0">Категория 5</p>
+        </div>
+        <div class="round d-flex align-items-center">
+          <input type="checkbox" id="checkbox6" />
+          <label for="checkbox6"></label>
+          <p class="cat-type m-0">Категория 6</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox7" />
+          <label for="checkbox7"></label>
+          <p class="cat-type m-0">Категория 1</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox8" />
+          <label for="checkbox8"></label>
+          <p class="cat-type m-0">Категория 2</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox9" />
+          <label for="checkbox9"></label>
+          <p class="cat-type m-0">Категория 3</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox10" />
+          <label for="checkbox10"></label>
+          <p class="cat-type m-0">Категория 4</p>
+        </div>
+        <div class="round d-flex align-items-center mb-3">
+          <input type="checkbox" id="checkbox11" />
+          <label for="checkbox11"></label>
+          <p class="cat-type m-0">Категория 5</p>
+        </div>
+        <div class="round d-flex align-items-center">
+          <input type="checkbox" id="checkbox12" />
+          <label for="checkbox12"></label>
+          <p class="cat-type m-0">Категория 6</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="sort d-flex flex-row justify-content-between align-items-center px-4" (click)="openSort()">
+      <p class="m-0">{{sort}}</p>
+      <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+      </svg>
+    </div>
+    <div class="arrow-container" *ngIf="isSort">
+      <div class="arrow arrow-bottom"></div>
+    </div>
+    <div class="sort-options px-4" *ngIf="isSort">
+      <p class="my-3" (click)="setSort('По дате добавления')">По дате добавления</p>
+      <p class="mb-3" (click)="setSort('По популярности')">По популярности</p>
+      <p class="mb-3" (click)="setSort('От дешевых к дорогим')">От дешевых к дорогим</p>
+      <p (click)="setSort('От дорогих к дешевым')">От дорогих к дешевым</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // Material Select Initialization
+  $(document).ready(function() {
+    $('.mdb-select').materialSelect();
+  });
+</script>
