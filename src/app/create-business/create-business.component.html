@@ -1,0 +1,227 @@
+<div class="create-business">
+  <p class="steps w-50 text-center" *ngIf="pageNum === 1">шаг 1 из 4</p>
+  <p class="steps w-100 text-center" *ngIf="pageNum === 2">шаг 2 из 4</p>
+  <p class="steps w-100 text-right" *ngIf="pageNum === 3" style="padding-right: 22.5%;">шаг 3 из 4</p>
+  <div class="progress" *ngIf="pageNum === 1">
+    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress" *ngIf="pageNum === 2">
+    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress" *ngIf="pageNum === 3">
+    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress" *ngIf="pageNum === 4">
+    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="content-form">
+    <form [formGroup]="createBusiness" class="form">
+      <div class="page-1 w-50" *ngIf="pageNum === 1">
+        <h5 class="title">Основная информация</h5>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText1">Название объявления</label>
+          <input formControlName="name" type="text" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Цена</label>
+          <input formControlName="price" type="number" class="form-control" id="exampleInputText2">
+        </div>
+<!--        <div class="form-group">-->
+<!--          <label class="title-label" for="exampleInputText1">Категория</label>-->
+<!--&lt;!&ndash;          <input formControlName="name" type="text" class="form-control" id="exampleInputText3" aria-describedby="emailHelp">&ndash;&gt;-->
+<!--          <div>-->
+<!--            <div class="form-control d-flex flex-row justify-content-between align-items-center px-4" (click)="openCategory()">-->
+<!--              <label for="categoryFormControlSelect1" class="m-0">{{category}}</label>-->
+<!--              <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="city-options px-4" *ngIf="isCategory">-->
+<!--              <p class="my-3" formControlName="category" id="categoryFormControlSelect1" (click)="setCategory(item)" *ngFor="let item of categoryList">{{item.name}}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+        <div class="form-group">
+          <label class="title-label" for="category">Категория</label>
+          <select class="form-control" id="category" formControlName="category">
+            <option class="city-options px-4" (click)="setCategory(item)" *ngFor="let item of categoryList" [value]="item.id">{{item.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="region">Город</label>
+          <select class="form-control" id="region" formControlName="region">
+            <option class="city-options px-4" (click)="setCity(item)" *ngFor="let item of cityList" [value]="item.id">{{item.name}}</option>
+          </select>
+        </div>
+<!--        <div class="form-group">-->
+<!--          <label class="title-label" for="exampleInputText1">Город</label>-->
+<!--          &lt;!&ndash;          <input formControlName="name" type="text" class="form-control" id="exampleInputText3" aria-describedby="emailHelp">&ndash;&gt;-->
+<!--          <div>-->
+<!--            <div class="form-control d-flex flex-row justify-content-between align-items-center px-4" (click)="openCity()">-->
+<!--              <p class="m-0">{{city}}</p>-->
+<!--              <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>-->
+<!--              </svg>-->
+<!--            </div>-->
+<!--            <div class="city-options px-4" *ngIf="isCity">-->
+<!--              <p class="my-3" (click)="setCity(item)" *ngFor="let item of cityList">{{item.name}}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Лет на рынке</label>
+          <input formControlName="years_on_the_market" type="number" class="form-control" id="exampleInputText5">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Фотографии</label>
+          <div class="form__field field">
+            <div class="field__title">*Прикрепленные скриншоты материала:</div>
+<!--            <div class="list__screenshot-wrapper" *ngIf="model.screenshots.length">-->
+<!--              <div class="screenshot" *ngFor="let screenshot of model.screenshots" style="margin-right: 5px; margin-bottom: 10px">-->
+<!--                <img [src]="screenshot.image" alt="Screenshot" class="screenshot__img">-->
+<!--                <a [href]="screenshot.image" class="screenshot__link" target="_blank"></a>-->
+<!--              </div>-->
+<!--            </div>-->
+            <input type="file" (change)="updated($event)" #upload accept=".jpg, .jpeg, .png" class="label__radio upload-file">
+            <!--                        <button class="button" (click)="saveScreen()" [disabled]="!file">Сохранить</button>-->
+          </div>
+        </div>
+        <button class="continue-btn mt-4" (click)="setPage(2)">Продолжить</button>
+      </div>
+      <div class="page-1 w-50" *ngIf="pageNum === 2">
+        <h5 class="title">Финансовые характеристики</h5>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText1">Выручка</label>
+          <input formControlName="revenue" type="text" class="form-control" id="exampleInputText7" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Прибыль</label>
+          <input formControlName="profit" type="text" class="form-control" id="exampleInputText8">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText1">Расходы</label>
+          <input formControlName="expenses" type="text" class="form-control" id="exampleInputText9" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Доля к  продаже</label>
+          <input formControlName="share_of_sale" type="text" class="form-control" id="exampleInputText10">
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <label class="title-label mb-0" for="exampleInputText2">Заемные средства</label>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10 5C9.6203 5 9.30651 5.28215 9.25685 5.64823L9.25 5.75V9.25H5.75C5.33579 9.25 5 9.58579 5 10C5 10.3797 5.28215 10.6935 5.64823 10.7432L5.75 10.75H9.25V14.25C9.25 14.6642 9.58579 15 10 15C10.3797 15 10.6935 14.7178 10.7432 14.3518L10.75 14.25V10.75H14.25C14.6642 10.75 15 10.4142 15 10C15 9.6203 14.7178 9.30651 14.3518 9.25685L14.25 9.25H10.75V5.75C10.75 5.33579 10.4142 5 10 5Z" fill="url(#paint0_linear)"/>
+              <defs>
+                <linearGradient id="paint0_linear" x1="20" y1="8.59999" x2="-3.45455" y2="8.59999" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3E53FF"/>
+                  <stop offset="1" stop-color="#91A1FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <input formControlName="borrowed_funds" type="number" class="form-control" id="exampleInputText15">
+        </div>
+        <div class="form-group">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <label class="title-label mb-0" for="exampleInputText2">Товарный остаток</label>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10 5C9.6203 5 9.30651 5.28215 9.25685 5.64823L9.25 5.75V9.25H5.75C5.33579 9.25 5 9.58579 5 10C5 10.3797 5.28215 10.6935 5.64823 10.7432L5.75 10.75H9.25V14.25C9.25 14.6642 9.58579 15 10 15C10.3797 15 10.6935 14.7178 10.7432 14.3518L10.75 14.25V10.75H14.25C14.6642 10.75 15 10.4142 15 10C15 9.6203 14.7178 9.30651 14.3518 9.25685L14.25 9.25H10.75V5.75C10.75 5.33579 10.4142 5 10 5Z" fill="url(#paint0_linear)"/>
+              <defs>
+                <linearGradient id="paint0_linear" x1="20" y1="8.59999" x2="-3.45455" y2="8.59999" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3E53FF"/>
+                  <stop offset="1" stop-color="#91A1FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <input formControlName="commodity_rest" type="number" class="form-control" id="exampleInputText14">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Предпологаемая окупаемость</label>
+          <div class="d-flex justify-content-between mt-2">
+            <input formControlName="estimated_payback" type="number" class="form-control" id="exampleInputText13" aria-describedby="emailHelp" style="width: 48%">
+            <input type="number" class="form-control" id="exampleInputText13" aria-describedby="emailHelp" style="width: 48%">
+          </div>
+        </div>
+        <button class="continue-btn mt-4" (click)="setPage(3)">Продолжить</button>
+      </div>
+      <div class="page-1 w-50" *ngIf="pageNum === 3">
+        <h5 class="title">Дополнительная информация</h5>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText1">Количество персонала</label>
+          <input formControlName="num_of_personal" type="number" class="form-control" id="exampleInputText11" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Средства производства</label>
+          <textarea formControlName="description production_means" type="number" class="form-control" id="exampleInputText12"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Здания и помещения</label>
+          <div class="d-flex justify-content-between mt-2">
+            <button class="building-btn" (click)="setBuildings(1)">В аренде</button>
+            <button class="building-btn" (click)="setBuildings(2)">В собственности</button>
+            <button class="building-btn" (click)="setBuildings(3)">Не требуется</button>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="createBusiness.value.building === 1">
+          <label class="title-label" for="exampleInputText2">Срок окончания аренды</label>
+          <div class="d-flex justify-content-between mt-2">
+            <input formControlName="term_of_the_lease" type="number" class="form-control" id="exampleInputText13" aria-describedby="emailHelp" style="width: 48%">
+            <input type="number" class="form-control" id="exampleInputText13" aria-describedby="emailHelp" style="width: 48%">
+          </div>
+        </div>
+        <div class="form-group" *ngIf="createBusiness.value.building === 1">
+          <label class="title-label" for="exampleInputText2">Есть ли право продления аренды?</label>
+          <div class="d-flex mt-2">
+            <button class="acceptance-btn mr-4" (click)="setAcceptance(true)">Да</button>
+            <button class="acceptance-btn" (click)="setAcceptance(false)">Нет</button>
+          </div>
+        </div>
+        <div class="form-group mt-5" *ngIf="createBusiness.value.building === 1">
+          <label class="title-label" for="exampleInputText2">Описание недвижимости</label>
+          <div class="d-flex justify-content-between">
+            <textarea class="description" formControlName="production_means"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group d-flex">
+          <div class="w-50">
+            <label class="title-label" for="exampleInputText2">Дополнительные документы</label>
+            <input formControlName="share_of_sale" type="file" class="form-control" id="exampleInputText14">
+          </div>
+          <div class="w-50">
+            <div class="tooltip-bgr d-flex align-items-center justify-content-center">
+              Презентации, отчеты и т.д.
+            </div>
+          </div>
+
+        </div>
+
+        <button class="continue-btn mt-4" (click)="setPage(4)">Продолжить</button>
+      </div>
+      <div class="page-4 w-100 d-flex flex-row" *ngIf="pageNum === 4">
+        <div class="w-50">
+          <h5 class="title">Последний шаг</h5>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText1">Контактное лицо</label>
+            <input formControlName="contact_name" type="text" class="form-control" id="exampleInputText15" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText2">Телефон</label>
+            <input formControlName="phone" type="text" class="form-control" id="exampleInputText16">
+          </div>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText1">E-mail</label>
+            <input formControlName="email" type="text" class="form-control" id="exampleInputText17" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText2">Комментарии/Описание</label>
+            <input formControlName="comment" type="text" class="form-control" id="exampleInputText18">
+          </div>
+          <button class="continue-btn mt-4" (click)="submit()">Опубликовать</button>
+        </div>
+        <div class="col-6"></div>
+      </div>
+    </form>
+  </div>
+</div>

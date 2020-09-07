@@ -1,0 +1,98 @@
+.create-business {
+  height: 120vh;
+  .steps {
+    font-size: 1rem;
+    color: #696E95;
+  }
+  .progress {
+    height: 4px;
+  }
+  .content-form {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .continue-btn {
+    width: 13rem;
+    height: 3rem;
+    float: right;
+    border: none;
+    color: #ffffff;
+    background: #3E53FF;
+    border-radius: 50px;
+  }
+  .title {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 2.5rem;
+    margin-top: 5rem;
+  }
+  .title-label {
+    font-size: 1rem;
+    color: #696E95;
+  }
+  .form-group {
+  position: relative;
+}
+  .form-control {
+    width: 100%;
+    height: 3rem;
+    opacity: 0.5;
+    box-sizing: border-box;
+    border: 1px solid #D0D1DE;
+    border-radius: 3px;
+  }
+  .city-options {
+    position: absolute;
+    margin-top: 15px;
+    width: 100%;
+    z-index: 10;
+    text-align: left;
+    border: 1px solid #D7DAF1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #ffffff;
+  }
+  select{
+    border: 1px solid #D0D1DE;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: url('../../assets/arrow-down.png') no-repeat right;
+    -webkit-appearance: none;
+    background-position-x: 97%;
+  }
+  .building-btn {
+    width: 11rem;
+    height: 3.5rem;
+    color: #696E95;
+    background: rgba(154,162,255, .1);
+    border-radius: 33px;
+    border: none;
+  }
+  .tooltip-bgr {
+    position: absolute;
+    right: 3rem;
+    width: 14rem;
+    height: 4rem;
+    background: url('../../assets/orange_background.png') no-repeat;
+    background-size: cover;
+    font-size: 14px;
+    color: #000000;
+    opacity: 0.7;
+  }
+  .acceptance-btn {
+    width: 7rem;
+    height: 3.5rem;
+    color: #696E95;
+    background: rgba(154,162,255, .1);
+    border-radius: 33px;
+    border: none;
+  }
+  .description {
+    width: 100%;
+    height: 6rem;
+    border: 1px solid #D0D1DE;
+    box-sizing: border-box;
+    border-radius: 3px;
+    resize: none;
+  }
+}
