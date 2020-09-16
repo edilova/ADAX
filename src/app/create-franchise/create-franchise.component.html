@@ -1,0 +1,143 @@
+<div class="create-business">
+  <p class="steps w-50 text-center" *ngIf="pageNum === 1">шаг 1 из 4</p>
+  <p class="steps w-100 text-center" *ngIf="pageNum === 2">шаг 2 из 4</p>
+  <p class="steps w-100 text-right" *ngIf="pageNum === 3" style="padding-right: 22.5%;">шаг 3 из 4</p>
+  <div class="progress" *ngIf="pageNum === 1">
+    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress" *ngIf="pageNum === 2">
+    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress" *ngIf="pageNum === 3">
+    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress" *ngIf="pageNum === 4">
+    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="content-form">
+    <form [formGroup]="createFranchise" class="form">
+      <div class="page-1 w-50" *ngIf="pageNum === 1">
+        <h5 class="title">Заполните основную информацию по продаже франшизы</h5>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText1">Название объявления</label>
+          <input formControlName="name" type="text" class="form-control" id="exampleInputText1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="category">Категория</label>
+          <select class="form-control" id="category" formControlName="category">
+            <option class="city-options px-4" (click)="setCategory(item)" *ngFor="let item of categoryList" [value]="item.id">{{item.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText2">Год основания компании *</label>
+          <input formControlName="company_foundation" type="number" class="form-control" id="exampleInputText2">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText3">Год запуска программы франшизы *</label>
+          <input formControlName="franchise_program_start" type="number" class="form-control" id="exampleInputText3">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText4">Количество франшизных предприятий</label>
+          <input formControlName="num_of_franchise_businesses" type="number" class="form-control" id="exampleInputText4">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText5">Количество собственных предприятий предприятий *</label>
+          <input formControlName="num_of_own_enterprises" type="number" class="form-control" id="exampleInputText5">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText6">Затраты на запуск (в тенге) *</label>
+          <input formControlName="launch_costs" type="number" class="form-control" id="exampleInputText6">
+        </div>
+        <button class="continue-btn mt-4" (click)="setPage(2)">Продолжить</button>
+      </div>
+      <div class="page-1 w-50" *ngIf="pageNum === 2">
+        <h5 class="title">Финансовые характеристики</h5>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText7">Вступительный взнос (в тенге) *</label>
+          <input formControlName="entrance_fee" type="text" class="form-control" id="exampleInputText7" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText8">Подробнее о вступительном взносе</label>
+          <input formControlName="comment_entrance_fee" type="text" class="form-control" id="exampleInputText8">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText9">Роялти *</label>
+          <div class="d-flex align-items-end">
+            <input formControlName="royalty" type="text" class="form-control w-25 mr-2" id="exampleInputText9" aria-describedby="emailHelp">
+            <svg class="mb-2" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.176 10.928C4.61867 10.928 3.34933 10.4373 2.368 9.456C1.38667 8.45333 0.896 7.19467 0.896 5.68C0.896 4.144 1.38667 2.87467 2.368 1.872C3.34933 0.847999 4.61867 0.335999 6.176 0.335999C7.75467 0.335999 9.03467 0.847999 10.016 1.872C11.0187 2.87467 11.52 4.144 11.52 5.68C11.52 7.19467 11.0187 8.45333 10.016 9.456C9.03467 10.4373 7.75467 10.928 6.176 10.928ZM6.24 22H4.128L17.76 0.655998H19.904L6.24 22ZM21.472 20.912C20.4907 21.8933 19.2213 22.384 17.664 22.384C16.1067 22.384 14.8373 21.8933 13.856 20.912C12.8747 19.9093 12.384 18.6507 12.384 17.136C12.384 15.6 12.8747 14.3307 13.856 13.328C14.8373 12.304 16.1067 11.792 17.664 11.792C19.2213 11.792 20.4907 12.304 21.472 13.328C22.4747 14.352 22.976 15.6213 22.976 17.136C22.976 18.6507 22.4747 19.9093 21.472 20.912ZM6.176 8.816C7.008 8.816 7.69067 8.528 8.224 7.952C8.75733 7.35467 9.024 6.59733 9.024 5.68C9.024 4.72 8.75733 3.952 8.224 3.376C7.69067 2.77867 7.008 2.48 6.176 2.48C5.344 2.48 4.66133 2.77867 4.128 3.376C3.616 3.952 3.36 4.72 3.36 5.68C3.36 6.59733 3.62667 7.35467 4.16 7.952C4.69333 8.528 5.36533 8.816 6.176 8.816ZM15.616 19.408C16.1493 19.984 16.832 20.272 17.664 20.272C18.496 20.272 19.1787 19.984 19.712 19.408C20.2453 18.8107 20.512 18.0533 20.512 17.136C20.512 16.176 20.2453 15.408 19.712 14.832C19.1787 14.2347 18.496 13.936 17.664 13.936C16.832 13.936 16.1493 14.2347 15.616 14.832C15.104 15.408 14.848 16.176 14.848 17.136C14.848 18.0533 15.104 18.8107 15.616 19.408Z" fill="#696E95"/>
+            </svg>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText10">Подробнее о роялти </label>
+          <textarea formControlName="comment_royalty" type="number" class="form-control" id="exampleInputText10" style="height: 7rem;"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText11">Иные текущие платежи</label>
+          <input formControlName="other_current_payments" type="text" class="form-control" id="exampleInputText11">
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText12">Есть ли обучение/поддержка</label>
+          <div class="d-flex align-items-center">
+
+            <div class="rounded-circle d-flex align-items-center">
+              <input formControlName="training" type="checkbox" id="checkbox6" />
+              <label for="checkbox6"></label>
+              <p class="cat-type m-0 pl-2">Да, есть</p>
+            </div>
+<!--            <input formControlName="share_of_sale" type="radio"id="exampleInputText10">-->
+<!--            <p class="m-0">Да, есть</p>-->
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText13">Краткое описание бизнеса *</label>
+          <textarea formControlName="brief_description" type="number" class="form-control" id="exampleInputText13" style="height: 8rem;"></textarea>
+        </div>
+        <button class="continue-btn mt-4" (click)="setPage(3)">Продолжить</button>
+      </div>
+      <div class="page-1 w-50" *ngIf="pageNum === 3">
+        <h5 class="title">Заполните детали по продаже франшизы</h5>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText14">Что включено в пакет *</label>
+          <textarea formControlName="package" type="number" class="form-control" id="exampleInputText14" style="height: 8rem;"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText15">Требования к франчайзи *</label>
+          <textarea formControlName="requirements_franchise" type="number" class="form-control" id="exampleInputText15" style="height: 8rem;"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="title-label" for="exampleInputText16">Требования к представительству *</label>
+          <textarea formControlName="requirements_representation" type="number" class="form-control" id="exampleInputText16" style="height: 8rem;"></textarea>
+        </div>
+
+        <button class="continue-btn mt-4" (click)="setPage(4)">Продолжить</button>
+      </div>
+      <div class="page-4 w-100 d-flex flex-row" *ngIf="pageNum === 4">
+        <div class="w-50">
+          <h5 class="title">Последний шаг</h5>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText17">Контактное лицо</label>
+            <input formControlName="contact_name" type="text" class="form-control" id="exampleInputText17" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText18">Телефон</label>
+            <input formControlName="phone" type="text" class="form-control" id="exampleInputText18">
+          </div>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText19">E-mail</label>
+            <input formControlName="email" type="text" class="form-control" id="exampleInputText19" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label class="title-label" for="exampleInputText20">Комментарии/Описание</label>
+            <textarea formControlName="comment" type="number" class="form-control" id="exampleInputText20" style="height: 8rem;"></textarea>
+          </div>
+          <button class="continue-btn mt-4" (click)="submit()">Опубликовать</button>
+        </div>
+        <div class="col-6 d-flex justify-content-center align-items-center">
+          <img src="../../assets/no-ads.svg" alt="">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

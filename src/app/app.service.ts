@@ -60,4 +60,13 @@ export class AppService {
         })
       );
   }
+  createFranchise(info): Observable<Observable<Profile>> {
+    return this.httpClient.post<Observable<any>>(url + '/franchise/Franchise/', info)
+      .pipe(
+        map ((res) => {
+          console.log('res submit franchise', res)
+          return res;
+        })
+      );
+  }
 }

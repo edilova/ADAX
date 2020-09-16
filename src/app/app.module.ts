@@ -19,6 +19,7 @@ import { FiltersComponent } from './component/filters/filters.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateBusinessComponent } from './create-business/create-business.component';
+import { CreateFranchiseComponent } from './create-franchise/create-franchise.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CreateBusinessComponent } from './create-business/create-business.compo
     SettingsComponent,
     MyNewsComponent,
     FiltersComponent,
-    CreateBusinessComponent
+    CreateBusinessComponent,
+    CreateFranchiseComponent
   ],
   imports: [
     BrowserModule,

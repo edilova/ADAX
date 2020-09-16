@@ -216,11 +216,15 @@
           </div>
           <div class="form-group">
             <label class="title-label" for="exampleInputText2">Комментарии/Описание</label>
-            <input formControlName="comment" type="text" class="form-control" id="exampleInputText18">
+<!--            <input formControlName="comment" type="text" class="form-control" id="exampleInputText18">-->
+            <textarea formControlName="comment" type="number" class="form-control" id="exampleInputText18" style="height: 8rem;"></textarea>
+
           </div>
           <button class="continue-btn mt-4" (click)="submit()">Опубликовать</button>
         </div>
-        <div class="col-6"></div>
+        <div class="col-6 d-flex justify-content-center align-items-center">
+          <img src="../../assets/no-ads.svg" alt="">
+        </div>
       </div>
     </form>
   </div>
