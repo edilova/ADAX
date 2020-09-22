@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../app.service';
 import {Profile} from '../interfaces/Profile';
 import {Observable} from 'rxjs';
@@ -19,33 +19,61 @@ export class CreateBusinessComponent implements OnInit {
   public file: any;
   public cityList: Observable<Profile>;
   public categoryList: Observable<Profile>;
-  public createBusiness = new FormGroup({
-    name: new FormControl(''),
-    price:  new FormControl(''),
-    years_on_the_market:  new FormControl(''),
-    revenue:  new FormControl(''),
-    profit:  new FormControl(''),
-    expenses:  new FormControl(''),
-    share_of_sale:  new FormControl(''),
-    borrowed_funds:  new FormControl(''),
-    commodity_rest:  new FormControl(''),
-    estimated_payback:  new FormControl(''),
-    num_of_personal:  new FormControl(''),
-    production_means:  new FormControl(''),
-    term_of_the_lease:  new FormControl(''),
-    extend_the_lease:  new FormControl(''),
-    contact_name:  new FormControl(''),
-    phone:  new FormControl(''),
-    email:  new FormControl(''),
-    comment:  new FormControl(''),
-    category:  new FormControl(''),
-    region:  new FormControl(''),
-    building:  new FormControl(''),
-  });
+  public createBusiness: FormGroup;
+  public isOpenBorrowedFund = false;
+  public isOpenCommodityRest = false;
+  public urls = [];
+  // public createBusiness = this.FormGroup.group({
+  //   name: ['', Validators.required],
+  //   price:  new FormControl(''),
+  //   years_on_the_market:  new FormControl(''),
+  //   revenue:  new FormControl(''),
+  //   profit:  new FormControl(''),
+  //   expenses:  new FormControl(''),
+  //   share_of_sale:  new FormControl(''),
+  //   borrowed_funds:  new FormControl(''),
+  //   commodity_rest:  new FormControl(''),
+  //   estimated_payback:  new FormControl(''),
+  //   num_of_personal:  new FormControl(''),
+  //   production_means:  new FormControl(''),
+  //   term_of_the_lease:  new FormControl(''),
+  //   extend_the_lease:  new FormControl(''),
+  //   contact_name:  new FormControl(''),
+  //   phone:  new FormControl(''),
+  //   email:  new FormControl(''),
+  //   comment:  new FormControl(''),
+  //   category:  new FormControl(''),
+  //   region:  new FormControl(''),
+  //   building:  new FormControl(''),
+  // });
 
-  constructor( private appService: AppService ) { }
+  constructor( private appService: AppService, private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
+    this.createBusiness = this.formBuilder.group({
+        name: ['', Validators.required],
+        price: ['', Validators.required],
+        years_on_the_market: ['', Validators.required],
+        revenue:  ['', Validators.required],
+        profit:  ['', Validators.required],
+        expenses:  ['', Validators.required],
+        share_of_sale:  ['', Validators.required],
+        borrowed_funds:  ['', Validators.required],
+        commodity_rest:  ['', Validators.required],
+        estimated_payback:  ['', Validators.required],
+        num_of_personal:  ['', Validators.required],
+        production_means:  ['', Validators.required],
+        term_of_the_lease:  [''],
+        extend_the_lease:  ['', Validators.required],
+        building_description:  [''],
+        contact_name:  ['', Validators.required],
+        phone:  ['', Validators.required],
+        email:  ['', Validators.required],
+        comment:  ['', Validators.required],
+        category:  ['', Validators.required],
+        region:  ['', Validators.required],
+        building:  ['', Validators.required],
+      });
     this.appService.getCategory()
       .subscribe(m => {
           console.log('getCategory', m);
@@ -115,6 +143,26 @@ export class CreateBusinessComponent implements OnInit {
       err => {
         console.log('error', err);
       }
-    )
+    );
+  }
+  changePlus(item): void {
+    if (item === 'borrowed_funds') {
+      this.isOpenBorrowedFund = !this.isOpenBorrowedFund;
+    }
+    if (item === 'commodity_rest') {
+      this.isOpenCommodityRest = !this.isOpenCommodityRest;
+    }
+  }
+  selectFiles(event): void {
+    if (event.target.files) {
+      for (let i = 0; i < File.length; i++) {
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[i]);
+        reader.onload = (event: any) => {
+          this.urls.push(event.target.result);
+          console.log('photos', this.urls)
+        };
+      }
+    }
   }
 }

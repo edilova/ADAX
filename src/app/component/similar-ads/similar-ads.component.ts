@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-similar-ads',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimilarAdsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  openAd(id): void {
+    window.scroll(0, 0);
+    this.router.navigate(['/product/' + id ]);
+  }
 }

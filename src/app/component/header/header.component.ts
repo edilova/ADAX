@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   public createAdBtn = false;
 
-  constructor() { }
+  constructor(private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,13 @@ export class HeaderComponent implements OnInit {
   }
 
   public setAdType(type): void {
+    if (type === 'create-business') {
+      this.router.navigate(['/create-business']);
+    }
+    if (type === 'create-franchise') {
+      this.router.navigate(['/create-franchise']);
+    }
+    this.createAdBtn = false;
   }
 
 }

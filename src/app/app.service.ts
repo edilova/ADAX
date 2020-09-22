@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Profile } from './interfaces/Profile';
 import {map} from 'rxjs/operators';
 
-const url = 'http://adax-kz.herokuapp.com'
+const url = 'http://adaxkz.herokuapp.com'
 
 @Injectable({
   providedIn: 'root'

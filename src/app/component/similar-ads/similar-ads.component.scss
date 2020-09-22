@@ -1,7 +1,11 @@
 .similar-ads {
-  width: 100%;
+  //width: 100%;
   height: 38rem;
   background: #F7FAFE;
+  .ads {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+  }
   .content {
     margin-left: 4rem;
     margin-right: 4rem;
@@ -77,5 +81,8 @@
         color: #000000;
       }
     }
+  }
+  .blocks {
+    width: 90%;
   }
 }

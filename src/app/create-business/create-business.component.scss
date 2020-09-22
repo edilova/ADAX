@@ -95,4 +95,15 @@
     border-radius: 3px;
     resize: none;
   }
+  .error-msg {
+    color: red;
+  }
+  .uploaded-photos {
+    width: 140px;
+    height: 140px;
+    border-radius: 5px;
+  }
+  .upload-file {
+    background: url('../../assets/add_image.png') no-repeat;
+  }
 }

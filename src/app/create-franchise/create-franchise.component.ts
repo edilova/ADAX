@@ -39,7 +39,9 @@ export class CreateFranchiseComponent implements OnInit {
     phone:  new FormControl(''),
     email:  new FormControl(''),
     comment:  new FormControl(''),
-    category:  new FormControl('')
+    category:  new FormControl(''),
+    price:  new FormControl(''),
+    city:  new FormControl('')
   });
 
   constructor( private appService: AppService ) { }
