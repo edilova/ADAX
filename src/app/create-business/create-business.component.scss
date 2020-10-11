@@ -1,5 +1,5 @@
 .create-business {
-  height: 120vh;
+  height: 135vh;
   .steps {
     font-size: 1rem;
     color: #696E95;
@@ -11,14 +11,24 @@
     margin-left: 4rem;
     margin-right: 4rem;
   }
+  .wrap-btn {
+    float: right;
+
+  }
   .continue-btn {
     width: 13rem;
     height: 3rem;
-    float: right;
     border: none;
     color: #ffffff;
     background: #3E53FF;
     border-radius: 50px;
+    outline: none;
+  }
+  .preview-btn {
+    border: none;
+    color: #3E53FF;
+    background-color: transparent;
+    outline: none;
   }
   .title {
     font-size: 1.3rem;

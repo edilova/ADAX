@@ -73,6 +73,7 @@ export class CreateBusinessComponent implements OnInit {
         category:  ['', Validators.required],
         region:  ['', Validators.required],
         building:  ['', Validators.required],
+        type:  1,
       });
     this.appService.getCategory()
       .subscribe(m => {

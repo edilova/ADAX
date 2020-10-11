@@ -1,5 +1,161 @@
 <div class="main">
-  <app-filters></app-filters>
+<!--  <app-filters></app-filters>-->
+  <div class="filters d-flex">
+    <div>
+      <div class="city d-flex flex-row justify-content-between align-items-center px-4" (click)="openCity()">
+        <p class="m-0">{{city}}</p>
+        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+        </svg>
+      </div>
+      <div class="arrow-container" *ngIf="isCity">
+        <div class="arrow arrow-bottom"></div>
+      </div>
+      <div class="city-options px-4" *ngIf="isCity">
+        <p class="my-3" (click)="setCity(item)" *ngFor="let item of this.cities">{{item.name}}</p>
+        <!--      <p class="my-3" (click)="setCity('Нур-Султан')">Нур-Султан</p>-->
+        <!--      <p class="mb-3" (click)="setCity('Алматы')">Алматы</p>-->
+        <!--      <p (click)="setCity('Караганда')">Караганда</p>-->
+      </div>
+    </div>
+    <div class="mx-3">
+      <div class="type d-flex flex-row justify-content-between align-items-center px-4" (click)="openType()">
+        <p class="m-0">{{type}}</p>
+        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+        </svg>
+      </div>
+      <div class="arrow-container" *ngIf="isType">
+        <div class="arrow arrow-bottom"></div>
+      </div>
+      <div class="type-options px-4" *ngIf="isType">
+        <p class="my-3" (click)="setType(1)">Продажа бизнеса</p>
+        <p (click)="setType(2)">Продажа франшизы</p>
+      </div>
+    </div>
+    <div>
+      <div class="category d-flex flex-row justify-content-between align-items-center px-4" (click)="openCategory()">
+        <p class="m-0">{{category}}</p>
+        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+        </svg>
+      </div>
+      <div class="arrow-container" *ngIf="isCategory">
+        <div class="arrow arrow-bottom"></div>
+      </div>
+      <div class="category-options d-flex flex-column px-4" *ngIf="isCategory">
+        <div class="round d-flex align-items-center mb-3" *ngFor="let item of this.categories">
+          <input type="checkbox" [id]="item.id" (change)="setCategory(item)" />
+          <label [for]="item.id"></label>
+          <p class="cat-type m-0">{{item.name}}</p>
+        </div>
+<!--        <div class="col-6">-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox1" />-->
+<!--            <label for="checkbox1"></label>-->
+<!--            <p class="cat-type m-0">Категория 1</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox2" />-->
+<!--            <label for="checkbox2"></label>-->
+<!--            <p class="cat-type m-0">Категория 2</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox3" />-->
+<!--            <label for="checkbox3"></label>-->
+<!--            <p class="cat-type m-0">Категория 3</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox4" />-->
+<!--            <label for="checkbox4"></label>-->
+<!--            <p class="cat-type m-0">Категория 4</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox5" />-->
+<!--            <label for="checkbox5"></label>-->
+<!--            <p class="cat-type m-0">Категория 5</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center">-->
+<!--            <input type="checkbox" id="checkbox6" />-->
+<!--            <label for="checkbox6"></label>-->
+<!--            <p class="cat-type m-0">Категория 6</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col-6">-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox7" />-->
+<!--            <label for="checkbox7"></label>-->
+<!--            <p class="cat-type m-0">Категория 1</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox8" />-->
+<!--            <label for="checkbox8"></label>-->
+<!--            <p class="cat-type m-0">Категория 2</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox9" />-->
+<!--            <label for="checkbox9"></label>-->
+<!--            <p class="cat-type m-0">Категория 3</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox10" />-->
+<!--            <label for="checkbox10"></label>-->
+<!--            <p class="cat-type m-0">Категория 4</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center mb-3">-->
+<!--            <input type="checkbox" id="checkbox11" />-->
+<!--            <label for="checkbox11"></label>-->
+<!--            <p class="cat-type m-0">Категория 5</p>-->
+<!--          </div>-->
+<!--          <div class="round d-flex align-items-center">-->
+<!--            <input type="checkbox" id="checkbox12" />-->
+<!--            <label for="checkbox12"></label>-->
+<!--            <p class="cat-type m-0">Категория 6</p>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </div>
+    <div class="price-filter d-flex align-items-center justify-content-between px-4 mx-3">
+      <div>Цена</div>
+      <div class="vertical-divider mx-2"></div>
+      <div class="input-group">
+        <div class="input-group-prepend d-flex align-items-center">от</div>
+        <input type="text" class="" aria-label="Amount (to the nearest dollar)" [(ngModel)]="minPrice" (change)="setMinPrice(minPrice)">
+        <div class="input-group-append d-flex align-items-center">тг</div>
+      </div>
+      <div class="vertical-divider mx-2"></div>
+      <div class="input-group">
+        <div class="input-group-prepend d-flex align-items-center">от</div>
+        <input type="text" class="" aria-label="Amount (to the nearest dollar)" [(ngModel)]="maxPrice" (change)="setMaxPrice(maxPrice)">
+        <div class="input-group-append d-flex align-items-center">тг</div>
+      </div>
+    </div>
+    <div>
+      <div class="sort d-flex flex-row justify-content-between align-items-center px-4" (click)="openSort()">
+        <p class="m-0">{{sort}}</p>
+        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.61133 0.985146C1.32692 0.716532 0.878615 0.729332 0.610002 1.01374C0.341388 1.29814 0.354189 1.74645 0.638593 2.01506L7.01359 8.03612C7.28657 8.29394 7.71329 8.29395 7.98629 8.03616L14.3623 2.0151C14.6467 1.74651 14.6596 1.2982 14.391 1.01378C14.1224 0.729351 13.6741 0.716515 13.3897 0.985106L7.5 6.54687L1.61133 0.985146Z" fill="#A1A4BD"/>
+        </svg>
+      </div>
+      <div class="arrow-container" *ngIf="isSort">
+        <div class="arrow arrow-bottom"></div>
+      </div>
+      <div class="sort-options px-4" *ngIf="isSort">
+        <p class="my-3" (click)="setSort('business__date')">По дате добавления</p>
+        <p class="mb-3" (click)="setSort('business__views')">По популярности</p>
+        <p class="mb-3" (click)="setSort('business__price')">От дешевых к дорогим</p>
+        <p (click)="setSort('-business__price')">От дорогих к дешевым</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Material Select Initialization
+    $(document).ready(function() {
+      $('.mdb-select').materialSelect();
+    });
+  </script>
+
   <div class="banner my-4"></div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -175,11 +331,11 @@
     </a>
   </div>
   <h3 class="main-title text-center mt-5">Популярные объявления</h3>
-  <div class="ads d-flex mt-5">
+  <div class="ads d-flex mt-5" *ngFor="let item of data">
     <div class="col-4 w-100 h-100">
       <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
         <div class="ad-image d-flex align-items-end p-3">
-          <p class="price m-0 text-white">120 млн тг</p>
+          <p class="price m-0 text-white">{{item.business.price}}</p>
         </div>
         <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>
         <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>
@@ -209,72 +365,72 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
-      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
-        <div class="ad-image d-flex align-items-end p-3">
-          <p class="price m-0 text-white">120 млн тг</p>
-        </div>
-        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>
-        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>
-        <div class="description d-flex">
-          <div class="left col-3">
-            <div class="d-flex flex-column align-items-center my-2">
-              <h3 class="value">12 млн/г.</h3>
-              <p class="key m-0">Прибыль</p>
-            </div>
-          </div>
-          <div class="right col-9">
-            <div class="d-flex justify-content-between mx-4">
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">100%</h3>
-                <p class="key m-0">Доля</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">500</h3>
-                <p class="key m-0">Персонал</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">12</h3>
-                <p class="key m-0">Лет</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
-        <div class="ad-image d-flex align-items-end p-3">
-          <p class="price m-0 text-white">120 млн тг</p>
-        </div>
-        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>
-        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>
-        <div class="description d-flex">
-          <div class="left col-3">
-            <div class="d-flex flex-column align-items-center my-2">
-              <h3 class="value">12 млн/г.</h3>
-              <p class="key m-0">Прибыль</p>
-            </div>
-          </div>
-          <div class="right col-9">
-            <div class="d-flex justify-content-between mx-4">
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">100%</h3>
-                <p class="key m-0">Доля</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">500</h3>
-                <p class="key m-0">Персонал</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">12</h3>
-                <p class="key m-0">Лет</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!--    <div class="col-4">-->
+<!--      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">-->
+<!--        <div class="ad-image d-flex align-items-end p-3">-->
+<!--          <p class="price m-0 text-white">120 млн тг</p>-->
+<!--        </div>-->
+<!--        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>-->
+<!--        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>-->
+<!--        <div class="description d-flex">-->
+<!--          <div class="left col-3">-->
+<!--            <div class="d-flex flex-column align-items-center my-2">-->
+<!--              <h3 class="value">12 млн/г.</h3>-->
+<!--              <p class="key m-0">Прибыль</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="right col-9">-->
+<!--            <div class="d-flex justify-content-between mx-4">-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">100%</h3>-->
+<!--                <p class="key m-0">Доля</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">500</h3>-->
+<!--                <p class="key m-0">Персонал</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">12</h3>-->
+<!--                <p class="key m-0">Лет</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-4">-->
+<!--      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">-->
+<!--        <div class="ad-image d-flex align-items-end p-3">-->
+<!--          <p class="price m-0 text-white">120 млн тг</p>-->
+<!--        </div>-->
+<!--        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>-->
+<!--        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>-->
+<!--        <div class="description d-flex">-->
+<!--          <div class="left col-3">-->
+<!--            <div class="d-flex flex-column align-items-center my-2">-->
+<!--              <h3 class="value">12 млн/г.</h3>-->
+<!--              <p class="key m-0">Прибыль</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="right col-9">-->
+<!--            <div class="d-flex justify-content-between mx-4">-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">100%</h3>-->
+<!--                <p class="key m-0">Доля</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">500</h3>-->
+<!--                <p class="key m-0">Персонал</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">12</h3>-->
+<!--                <p class="key m-0">Лет</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
   <div class="ads d-flex mt-5">
     <div class="col-4 w-100 h-100">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AppService} from '../../app.service';
 
 @Component({
   selector: 'app-filters',
@@ -14,10 +15,19 @@ export class FiltersComponent implements OnInit {
   public isType = false;
   public category = 'Категория';
   public isCategory = false;
+  public cities;
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
+    this.appService.getCity()
+      .subscribe(m => {
+          this.cities = m;
+          console.log('city m', m);
+        },
+        error => {
+          console.log('err', error);
+        });
   }
 
   public openCity(): void {
@@ -28,8 +38,9 @@ export class FiltersComponent implements OnInit {
     console.log(this.isCity);
   }
   public setCity(item): void {
-    this.city = item;
+    this.city = item.name;
     this.isCity = false;
+    this.appService.setId(item.id);
   }
   public openSort(): void {
     this.isSort = !this.isSort;

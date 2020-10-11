@@ -27,8 +27,11 @@
           <input formControlName="price" type="text" class="form-control" id="exampleInputText21" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
-          <label class="title-label" for="exampleInputText1">Регион</label>
-          <input formControlName="city" type="text" class="form-control" id="exampleInputText22" aria-describedby="emailHelp">
+          <label class="title-label" for="region">Город</label>
+          <select class="form-control" id="region" formControlName="region">
+            <option class="city-options px-4" (click)="setCity(item)" *ngFor="let item of cityList" [value]="item.id">{{item.name}}</option>
+          </select>
+          <span class="error-msg" *ngIf="createFranchise.controls['region'].invalid && createFranchise.controls['region'].touched">Это поле является обязательным для заполнения</span>
         </div>
         <div class="form-group">
           <label class="title-label" for="category">Категория</label>

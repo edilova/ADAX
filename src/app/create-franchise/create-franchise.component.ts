@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Profile} from '../interfaces/Profile';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../app.service';
 
 @Component({
@@ -18,35 +18,62 @@ export class CreateFranchiseComponent implements OnInit {
   public file: any;
   public cityList: Observable<Profile>;
   public categoryList: Observable<Profile>;
-  public createFranchise = new FormGroup({
-    name: new FormControl(''),
-    company_foundation:  new FormControl(''),
-    franchise_program_start:  new FormControl(''),
-    num_of_franchise_businesses:  new FormControl(''),
-    num_of_own_enterprises:  new FormControl(''),
-    launch_costs:  new FormControl(''),
-    entrance_fee:  new FormControl(''),
-    comment_entrance_fee:  new FormControl(''),
-    royalty:  new FormControl(''),
-    comment_royalty:  new FormControl(''),
-    other_current_payments:  new FormControl(''),
-    training:  new FormControl(''),
-    brief_description:  new FormControl(''),
-    package:  new FormControl(''),
-    requirements_franchise:  new FormControl(''),
-    requirements_representation:  new FormControl(''),
-    contact_name:  new FormControl(''),
-    phone:  new FormControl(''),
-    email:  new FormControl(''),
-    comment:  new FormControl(''),
-    category:  new FormControl(''),
-    price:  new FormControl(''),
-    city:  new FormControl('')
-  });
+  public createFranchise: FormGroup;
+  // public createFranchise = this.formBuilder.group({
+  //   name: ['', Validators.required],
+  //   company_foundation:  ['', Validators.required],
+  //   franchise_program_start:  new FormControl(''),
+  //   num_of_franchise_businesses:  new FormControl(''),
+  //   num_of_own_enterprises:  new FormControl(''),
+  //   launch_costs:  new FormControl(''),
+  //   entrance_fee:  new FormControl(''),
+  //   comment_entrance_fee:  new FormControl(''),
+  //   royalty:  new FormControl(''),
+  //   comment_royalty:  new FormControl(''),
+  //   other_current_payments:  new FormControl(''),
+  //   training:  new FormControl(''),
+  //   brief_description:  new FormControl(''),
+  //   package:  new FormControl(''),
+  //   requirements_franchise:  new FormControl(''),
+  //   requirements_representation:  new FormControl(''),
+  //   contact_name:  new FormControl(''),
+  //   phone:  new FormControl(''),
+  //   email:  new FormControl(''),
+  //   comment:  new FormControl(''),
+  //   category:  new FormControl(''),
+  //   price:  new FormControl(''),
+  //   city:  new FormControl('')
+  // });
 
-  constructor( private appService: AppService ) { }
+  constructor( private appService: AppService, private formBuilder: FormBuilder  ) { }
 
   ngOnInit(): void {
+    this.createFranchise = this.formBuilder.group({
+      name: ['', Validators.required],
+      company_foundation:  ['', Validators.required],
+      franchise_program_start:  ['', Validators.required],
+      num_of_franchise_businesses:  ['', Validators.required],
+      num_of_own_enterprises:  ['', Validators.required],
+      launch_costs:  ['', Validators.required],
+      entrance_fee:  ['', Validators.required],
+      comment_entrance_fee:  ['', Validators.required],
+      royalty:  ['', Validators.required],
+      comment_royalty:  ['', Validators.required],
+      other_current_payments:  ['', Validators.required],
+      training:  ['', Validators.required],
+      brief_description:  ['', Validators.required],
+      package:  ['', Validators.required],
+      requirements_franchise:  ['', Validators.required],
+      requirements_representation:  ['', Validators.required],
+      contact_name:  ['', Validators.required],
+      phone:  ['', Validators.required],
+      email:  ['', Validators.required],
+      comment:  ['', Validators.required],
+      category:  ['', Validators.required],
+      price:  ['', Validators.required],
+      region: ['', Validators.required],
+      type: 2
+    });
     this.appService.getCategory()
       .subscribe(m => {
           console.log('getCategory', m);

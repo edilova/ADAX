@@ -93,7 +93,9 @@
             <!--                        <button class="button" (click)="saveScreen()" [disabled]="!file">Сохранить</button>-->
           </div>
         </div>
-        <button class="continue-btn mt-4" (click)="setPage(2)">Продолжить</button>
+        <div class="wrap-btn">
+          <button class="continue-btn mt-4" (click)="setPage(2)">Продолжить</button>
+        </div>
       </div>
       <div class="page-1 w-50" *ngIf="pageNum === 2">
         <h5 class="title">Финансовые характеристики</h5>
@@ -173,7 +175,11 @@
           </div>
           <span class="error-msg" *ngIf="createBusiness.controls['estimated_payback'].invalid && createBusiness.controls['estimated_payback'].touched">Это поле является обязательным для заполнения</span>
         </div>
-        <button class="continue-btn mt-4" (click)="setPage(3)">Продолжить</button>
+        <div class="wrap-btn">
+          <button class="preview-btn mr-3" (click)="setPage(1)">Вернуться</button>
+          <button class="continue-btn mt-4" (click)="setPage(3)">Продолжить</button>
+        </div>
+
       </div>
       <div class="page-1 w-50" *ngIf="pageNum === 3">
         <h5 class="title">Дополнительная информация</h5>
@@ -231,7 +237,10 @@
           </div>
         </div>
 
-        <button class="continue-btn mt-4" (click)="setPage(4)">Продолжить</button>
+        <div class="wrap-btn">
+          <button class="preview-btn mr-3" (click)="setPage(2)">Вернуться</button>
+          <button class="continue-btn mt-4" (click)="setPage(4)">Продолжить</button>
+        </div>
       </div>
       <div class="page-4 w-100 d-flex flex-row" *ngIf="pageNum === 4">
         <div class="w-50">
@@ -256,7 +265,10 @@
             <textarea formControlName="comment" type="number" class="form-control" id="exampleInputText18" style="height: 8rem;"></textarea>
             <span class="error-msg" *ngIf="createBusiness.controls['comment'].invalid && createBusiness.controls['comment'].touched">Выберите здания и помещения</span>
           </div>
-          <button class="continue-btn mt-4" (click)="submit()">Опубликовать</button>
+          <div class="wrap-btn">
+            <button class="preview-btn mr-3">Предпросмотр</button>
+            <button class="continue-btn mt-4" (click)="submit()">Опубликовать</button>
+          </div>
         </div>
         <div class="col-6 d-flex justify-content-center align-items-center">
           <img src="../../assets/no-ads.svg" alt="">

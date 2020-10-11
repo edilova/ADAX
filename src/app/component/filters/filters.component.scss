@@ -21,9 +21,9 @@
   .category {
     width: 12rem;
     height: 3rem;
-    background: #E6E8FF;
+    //background: #E6E8FF;
     opacity: 0.5;
-    border: 1.2px solid #3E53FF;
+    border: 1.2px solid #D7DAF1;
     box-sizing: border-box;
     border-radius: 4px;
   }
@@ -37,6 +37,23 @@
     box-sizing: border-box;
     border-radius: 4px;
     background-color: #ffffff;
+  }
+  .price {
+    //width: 7rem;
+    height: 3rem;
+    //background: #E6E8FF;
+    opacity: 0.5;
+    border: 1.2px solid #D7DAF1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    input {
+      width: 60%;
+      border: none;
+    }
+    .vertical-divider {
+      height: 1rem;
+      border-left: 1px solid #D7DAF1;
+    }
   }
   input[type=checkbox], input[type=radio] {
     top: 4px;
@@ -71,9 +88,9 @@
   .sort {
     width: 17rem;
     height: 3rem;
-    background: #E6E8FF;
+    //background: #E6E8FF;
     opacity: 0.5;
-    border: 1.2px solid #3E53FF;
+    border: 1.2px solid #D7DAF1;
     box-sizing: border-box;
     border-radius: 4px;
   }
@@ -90,9 +107,9 @@
   .type {
     width: 16rem;
     height: 3rem;
-    background: #E6E8FF;
+    //background: #E6E8FF;
     opacity: 0.5;
-    border: 1.2px solid #3E53FF;
+    border: 1.2px solid #D7DAF1;
     box-sizing: border-box;
     border-radius: 4px;
   }
