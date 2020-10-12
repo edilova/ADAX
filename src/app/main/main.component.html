@@ -331,8 +331,8 @@
     </a>
   </div>
   <h3 class="main-title text-center mt-5">Популярные объявления</h3>
-  <div class="ads d-flex mt-5" *ngFor="let item of data">
-    <div class="col-4 w-100 h-100">
+  <div class="ads d-flex row mt-5">
+    <div class="col-4 w-100 h-100" *ngFor="let item of data">
       <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
         <div class="ad-image d-flex align-items-end p-3">
           <p class="price m-0 text-white">{{item.business.price}}</p>
@@ -433,41 +433,41 @@
 <!--    </div>-->
   </div>
   <div class="ads d-flex mt-5">
-    <div class="col-4 w-100 h-100">
-      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
-        <div class="ad-image d-flex align-items-end p-3">
-          <p class="price m-0 text-white">120 млн тг</p>
-        </div>
-        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>
-        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>
-        <div class="description d-flex">
-          <div class="left col-3">
-            <div class="d-flex flex-column align-items-center my-2">
-              <h3 class="value">12 млн/г.</h3>
-              <p class="key m-0">Прибыль</p>
-            </div>
-          </div>
-          <div class="right col-9">
-            <div class="d-flex justify-content-between mx-4">
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">100%</h3>
-                <p class="key m-0">Доля</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">500</h3>
-                <p class="key m-0">Персонал</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">12</h3>
-                <p class="key m-0">Лет</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-8">
-      <div class="subscribe d-flex justify-content-between" (click)="openAd(2)">
+<!--    <div class="col-4 w-100 h-100">-->
+<!--      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">-->
+<!--        <div class="ad-image d-flex align-items-end p-3">-->
+<!--          <p class="price m-0 text-white">120 млн тг</p>-->
+<!--        </div>-->
+<!--        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>-->
+<!--        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>-->
+<!--        <div class="description d-flex">-->
+<!--          <div class="left col-3">-->
+<!--            <div class="d-flex flex-column align-items-center my-2">-->
+<!--              <h3 class="value">12 млн/г.</h3>-->
+<!--              <p class="key m-0">Прибыль</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="right col-9">-->
+<!--            <div class="d-flex justify-content-between mx-4">-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">100%</h3>-->
+<!--                <p class="key m-0">Доля</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">500</h3>-->
+<!--                <p class="key m-0">Персонал</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">12</h3>-->
+<!--                <p class="key m-0">Лет</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="col-12">
+      <div class="subscribe d-flex justify-content-between mb-4" (click)="openAd(2)">
         <div class="left d-flex flex-column justify-content-between">
           <h3 class="title">Подпишитесь на рассылку о новых объявлениях</h3>
           <p class="subtitle m-0">Получайте еженедельную подборку новых объявлений, которые смогут вас заинтересовать</p>
@@ -478,105 +478,105 @@
       </div>
     </div>
   </div>
-  <div class="ads d-flex my-5">
-    <div class="col-4 w-100 h-100">
-      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
-        <div class="ad-image d-flex align-items-end p-3">
-          <p class="price m-0 text-white">120 млн тг</p>
-        </div>
-        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>
-        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>
-        <div class="description d-flex">
-          <div class="left col-3">
-            <div class="d-flex flex-column align-items-center my-2">
-              <h3 class="value">12 млн/г.</h3>
-              <p class="key m-0">Прибыль</p>
-            </div>
-          </div>
-          <div class="right col-9">
-            <div class="d-flex justify-content-between mx-4">
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">100%</h3>
-                <p class="key m-0">Доля</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">500</h3>
-                <p class="key m-0">Персонал</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">12</h3>
-                <p class="key m-0">Лет</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
-        <div class="ad-image d-flex align-items-end p-3">
-          <p class="price m-0 text-white">120 млн тг</p>
-        </div>
-        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>
-        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>
-        <div class="description d-flex">
-          <div class="left col-3">
-            <div class="d-flex flex-column align-items-center my-2">
-              <h3 class="value">12 млн/г.</h3>
-              <p class="key m-0">Прибыль</p>
-            </div>
-          </div>
-          <div class="right col-9">
-            <div class="d-flex justify-content-between mx-4">
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">100%</h3>
-                <p class="key m-0">Доля</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">500</h3>
-                <p class="key m-0">Персонал</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">12</h3>
-                <p class="key m-0">Лет</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">
-        <div class="ad-image d-flex align-items-end p-3">
-          <p class="price m-0 text-white">120 млн тг</p>
-        </div>
-        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>
-        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>
-        <div class="description d-flex">
-          <div class="left col-3">
-            <div class="d-flex flex-column align-items-center my-2">
-              <h3 class="value">12 млн/г.</h3>
-              <p class="key m-0">Прибыль</p>
-            </div>
-          </div>
-          <div class="right col-9">
-            <div class="d-flex justify-content-between mx-4">
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">100%</h3>
-                <p class="key m-0">Доля</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">500</h3>
-                <p class="key m-0">Персонал</p>
-              </div>
-              <div class="d-flex flex-column align-items-center my-2">
-                <h3 class="value">12</h3>
-                <p class="key m-0">Лет</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--  <div class="ads d-flex my-5">-->
+<!--    <div class="col-4 w-100 h-100">-->
+<!--      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">-->
+<!--        <div class="ad-image d-flex align-items-end p-3">-->
+<!--          <p class="price m-0 text-white">120 млн тг</p>-->
+<!--        </div>-->
+<!--        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>-->
+<!--        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>-->
+<!--        <div class="description d-flex">-->
+<!--          <div class="left col-3">-->
+<!--            <div class="d-flex flex-column align-items-center my-2">-->
+<!--              <h3 class="value">12 млн/г.</h3>-->
+<!--              <p class="key m-0">Прибыль</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="right col-9">-->
+<!--            <div class="d-flex justify-content-between mx-4">-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">100%</h3>-->
+<!--                <p class="key m-0">Доля</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">500</h3>-->
+<!--                <p class="key m-0">Персонал</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">12</h3>-->
+<!--                <p class="key m-0">Лет</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-4">-->
+<!--      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">-->
+<!--        <div class="ad-image d-flex align-items-end p-3">-->
+<!--          <p class="price m-0 text-white">120 млн тг</p>-->
+<!--        </div>-->
+<!--        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>-->
+<!--        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>-->
+<!--        <div class="description d-flex">-->
+<!--          <div class="left col-3">-->
+<!--            <div class="d-flex flex-column align-items-center my-2">-->
+<!--              <h3 class="value">12 млн/г.</h3>-->
+<!--              <p class="key m-0">Прибыль</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="right col-9">-->
+<!--            <div class="d-flex justify-content-between mx-4">-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">100%</h3>-->
+<!--                <p class="key m-0">Доля</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">500</h3>-->
+<!--                <p class="key m-0">Персонал</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">12</h3>-->
+<!--                <p class="key m-0">Лет</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-4">-->
+<!--      <div class="ad w-100 d-flex flex-column justify-content-between" (click)="openAd(2)">-->
+<!--        <div class="ad-image d-flex align-items-end p-3">-->
+<!--          <p class="price m-0 text-white">120 млн тг</p>-->
+<!--        </div>-->
+<!--        <h3 class="title mx-2 mt-2">Производственный комплекс, завод очень продаю в связи...</h3>-->
+<!--        <p class="subtitle mx-2">Производственный комплекс, завод очень продаю в связи...</p>-->
+<!--        <div class="description d-flex">-->
+<!--          <div class="left col-3">-->
+<!--            <div class="d-flex flex-column align-items-center my-2">-->
+<!--              <h3 class="value">12 млн/г.</h3>-->
+<!--              <p class="key m-0">Прибыль</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="right col-9">-->
+<!--            <div class="d-flex justify-content-between mx-4">-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">100%</h3>-->
+<!--                <p class="key m-0">Доля</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">500</h3>-->
+<!--                <p class="key m-0">Персонал</p>-->
+<!--              </div>-->
+<!--              <div class="d-flex flex-column align-items-center my-2">-->
+<!--                <h3 class="value">12</h3>-->
+<!--                <p class="key m-0">Лет</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 </div>
