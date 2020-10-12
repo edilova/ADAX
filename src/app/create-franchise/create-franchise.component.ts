@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {Profile} from '../interfaces/Profile';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../app.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-franchise',
@@ -45,7 +46,7 @@ export class CreateFranchiseComponent implements OnInit {
   //   city:  new FormControl('')
   // });
 
-  constructor( private appService: AppService, private formBuilder: FormBuilder  ) { }
+  constructor( private appService: AppService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.createFranchise = this.formBuilder.group({
@@ -139,6 +140,7 @@ export class CreateFranchiseComponent implements OnInit {
     this.appService.createFranchise(this.createFranchise.value).subscribe(
       e => {
         console.log('submit success');
+        this.router.navigate(['/main']);
       },
       err => {
         console.log('error', err);
